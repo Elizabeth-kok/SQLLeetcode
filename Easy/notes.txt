@@ -1,0 +1,47 @@
+1. What is a natural join in SQL?
+
+A NATURAL JOIN is a JOIN operation that creates an implicit join
+clause for you based on the common columns in the two tables being joined.
+Common columns are columns that have the same name in both tables.
+A NATURAL JOIN can be an INNER join, a LEFT OUTER join, or a RIGHT OUTER join.
+The default is INNER join.
+
+2. The SQL CASE Expression
+
+The CASE expresison goes through conditions and returns a value when
+the first condition is met (like an if-then-else statement).
+So, once a condition is true, it will stop reading and return the result.
+If no conditions are true, it returns the value in the ELSE clause.
+If there is no ELSE part and no conditions are true, it returns NULL
+CASE WHEN > THEN , WHEN > THEN, ELSE, END
+
+3. Join = Inner Join by default
+
+4. Aggregate functions, such as max() are applied to each group as determined
+by the group by clause.
+-select max(num) from number group by num having count(*)=1 X
+-select max(num) from
+                (select num
+                from number
+                group by num
+                having count(*) = 1) t  OK
+
+5. Window function
+- lead() get the next data
+- lag() get the previous data
+
+6. Create bins of "[0-5>", "[5-10>", "[10-15>" and "15 minutes or more"
+- Select "[0-5>" as bins
+  UNION ALL
+  Select "[5-10>" as bins
+  UNION ALL
+  Select "[10-15>" as bins
+  UNION ALL
+  Select "15 minutes or more" as bins
+
+7. COUNT(*) and COUNT(1) are identical
+
+8. The difference between Union and Union All is that Union All will not
+removes duplicate rows or records
+
+9. Self Join
