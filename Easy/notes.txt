@@ -45,3 +45,16 @@ by the group by clause.
 removes duplicate rows or records
 
 9. Self Join
+      1 a
+      2 b
+      3 c
+      becomes
+      1 a 1 a
+      1 a 2 b
+      1 a 3 c
+      2 b 1 a
+      2 b 2 b
+      2 b 3 c
+      3 c 1 a
+      3 c 2 b
+      3 c 3 c
