@@ -76,3 +76,23 @@ the CITIES table on the condition that COUNTRIES.COUNTRY is equal to CITIES.COUN
 
 12. Where content == "Y" WRONGGG only one equal sign needed!
     Where content = "Y" OK
+
+13. GROUP_CONCAT
+
+MySQL GROUP_CONCAT() function returns a string with concatenated non-NULL value from a group.
+    -- +------------+-------------+
+    -- | sell_date  | product     |
+    -- +------------+-------------+
+    -- | 2020-05-30 | Headphone   |
+    -- | 2020-05-30 | Basketball  |
+    -- | 2020-05-30 | T-Shirt     |
+    -- +------------+-------------+
+
+    becomes
+
+    -- Result table:
+    -- +------------+----------+------------------------------+
+    -- | sell_date  | num_sold | products                     |
+    -- +------------+----------+------------------------------+
+    -- | 2020-05-30 | 3        | Basketball,Headphone,T-shirt |
+    -- +------------+----------+------------------------------+
