@@ -58,3 +58,21 @@ removes duplicate rows or records
       3 c 1 a
       3 c 2 b
       3 c 3 c
+
+10. to get the null data >> WHERE B.Bonus is NULL
+
+11. USING clause : Use "USING" clause instead of "ON" clause
+
+Join = Inner Join (I think)
+The following query performs an inner join between the COUNTRIES table and
+the CITIES table on the condition that COUNTRIES.COUNTRY is equal to CITIES.COUNTRY:
+-- you need a bracket after USING clause
+
+      SELECT *
+      FROM COUNTRIES
+      JOIN CITIES
+      USING (COUNTRY)
+
+
+12. Where content == "Y" WRONGGG only one equal sign needed!
+    Where content = "Y" OK
