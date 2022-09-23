@@ -96,3 +96,7 @@ MySQL GROUP_CONCAT() function returns a string with concatenated non-NULL value 
     -- +------------+----------+------------------------------+
     -- | 2020-05-30 | 3        | Basketball,Headphone,T-shirt |
     -- +------------+----------+------------------------------+
+
+14. where description != "boring"
+    same as
+    where description not in ("boring")
