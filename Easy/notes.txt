@@ -100,5 +100,3 @@ MySQL GROUP_CONCAT() function returns a string with concatenated non-NULL value 
 14. where description != "boring"
     same as
     where description not in ("boring")
-
-15.
