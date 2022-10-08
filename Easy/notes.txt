@@ -100,3 +100,17 @@ MySQL GROUP_CONCAT() function returns a string with concatenated non-NULL value 
 14. where description != "boring"
     same as
     where description not in ("boring")
+
+15. DATE_SUB() function
+    Subtract 10 days from a date and return the date:
+    DATE_SUB("1997-08-28",INTERVAL 30 day)
+
+    Subtract 15 minutes from a date and return the date:
+    SELECT DATE_SUB("2017-06-15 09:34:21", INTERVAL 15 MINUTE)
+
+16. The DATEDIFF() function
+    returns the difference between two dates.
+
+    Return the difference between two date values, in months:
+
+    SELECT DATEDIFF(month, '2017/08/25', '2011/08/25') AS DateDiff;
