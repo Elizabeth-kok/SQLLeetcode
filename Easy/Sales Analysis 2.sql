@@ -1,4 +1,4 @@
--- Question 27
+-- Question 33
 -- Table: Product
 
 -- +--------------+---------+
@@ -25,7 +25,7 @@
 -- product_id is a foreign key to Product table.
 
 
--- Write an SQL query that reports the best seller by total sales price, If there is a tie, report them all.
+-- Write an SQL query that reports the buyers who have bought S8 but not iPhone. Note that S8 and iPhone are products present in the Product table.
 
 -- The query result format is in the following example:
 
@@ -44,25 +44,16 @@
 -- +-----------+------------+----------+------------+----------+-------+
 -- | 1         | 1          | 1        | 2019-01-21 | 2        | 2000  |
 -- | 1         | 2          | 2        | 2019-02-17 | 1        | 800   |
--- | 2         | 2          | 3        | 2019-06-02 | 1        | 800   |
--- | 3         | 3          | 4        | 2019-05-13 | 2        | 2800  |
+-- | 2         | 1          | 3        | 2019-06-02 | 1        | 800   |
+-- | 3         | 3          | 3        | 2019-05-13 | 2        | 2800  |
 -- +-----------+------------+----------+------------+----------+-------+
 
 -- Result table:
 -- +-------------+
--- | seller_id   |
+-- | buyer_id    |
 -- +-------------+
 -- | 1           |
--- | 3           |
 -- +-------------+
--- Both sellers with id 1 and 3 sold products with the most total price of 2800.
+-- The buyer with id 1 bought an S8 but didn't buy an iPhone. The buyer with id 3 bought both.
 
 -- Solution
-
-select a.seller_id
-from
-(select seller_id,
-rank() over(order by sum(price) desc) as rk
-from sales
-group by seller_id)a
-where a.rk = 1
