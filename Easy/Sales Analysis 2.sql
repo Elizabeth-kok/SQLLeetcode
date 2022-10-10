@@ -25,7 +25,9 @@
 -- product_id is a foreign key to Product table.
 
 
--- Write an SQL query that reports the buyers who have bought S8 but not iPhone. Note that S8 and iPhone are products present in the Product table.
+-- Write an SQL query that reports the buyers who have bought S8
+-- but not iPhone. Note that S8 and iPhone are products present
+-- in the Product table.
 
 -- The query result format is in the following example:
 
@@ -54,6 +56,36 @@
 -- +-------------+
 -- | 1           |
 -- +-------------+
--- The buyer with id 1 bought an S8 but didn't buy an iPhone. The buyer with id 3 bought both.
+-- The buyer with id 1 bought an S8 but didn't buy an iPhone.
+-- The buyer with id 3 bought both.
 
 -- Solution
+
+select distinct buyer_id
+from sales s
+join product p
+on p.product_id= s.product_id
+where buyer_id not in (
+  select distinct buyer_id
+  from sales s join product p
+  on p.product_id= s.product_id
+  where product_name="iPhone"
+)
+and product_name= "S8"
+
+select distinct buyer_id
+from sales s
+join product p
+on p.product_id= s.product_id
+where buyer_id not in (
+  select distinct buyer_id
+  from sales s join product p
+  on p.product_id= s.product_id
+  where product_name="iPhone"
+)
+and buyer_id in (
+  select distinct buyer_id
+  from sales s join product p
+  on p.product_id= s.product_id
+  where product_name="S8"
+)
