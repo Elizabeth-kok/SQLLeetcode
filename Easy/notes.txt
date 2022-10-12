@@ -114,3 +114,11 @@ MySQL GROUP_CONCAT() function returns a string with concatenated non-NULL value 
     Return the difference between two date values, in months:
 
     SELECT DATEDIFF(month, '2017/08/25', '2011/08/25') AS DateDiff;
+
+17. CROSS JOIN () function
+    The CROSS JOIN keyword returns all records from both tables (table1 and table2).
+
+    SELECT a.student_id,
+           b.subject_name
+    FROM   students AS a
+    CROSS JOIN subjects AS b
