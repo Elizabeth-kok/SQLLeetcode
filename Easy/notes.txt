@@ -122,3 +122,23 @@ MySQL GROUP_CONCAT() function returns a string with concatenated non-NULL value 
            b.subject_name
     FROM   students AS a
     CROSS JOIN subjects AS b
+
+18. SQL UPDATE Statement
+
+    The UPDATE statement is used to modify the existing records in a table.
+
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;
+
+19. COALESCE()
+    The COALESCE() function returns the first non-null value in a list.
+
+    COALESCE(val1, val2, ...., val_n)
+
+20. Judge whether these three sides can form a triangle
+    - three sides x, y and z
+
+    x+y> z and y+ z > x and x+z>y then "Yes"
+    when x= y and y=z then "Yes"
+    else "No"
