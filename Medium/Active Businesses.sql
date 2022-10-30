@@ -41,3 +41,4 @@
 -- Business with id 1 has 7 'reviews' events (more than 5) and 11 'ads' events (more than 8) so it is an active business.
 
 -- Solution
+-
